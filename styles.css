@@ -1,0 +1,27 @@
+.container {
+	text-align: center;
+	width: 960px;
+	margin: 0 auto 200px auto;
+	border: 2px solid #333;
+}
+
+.cell {
+	display: inline-block;
+	width: calc(960px/64);
+	height: calc(960px/64);
+	float: left;
+}
+
+.container,
+.row {
+	overflow: hidden;
+}
+
+.row {
+	width: 100%;
+}
+
+h1 {
+	text-transform: uppercase;
+	text-align: center;
+}

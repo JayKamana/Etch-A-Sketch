@@ -1,8 +1,8 @@
 $(function(){
 
 	var $container = $('.container');
-	var gridSize = 64;
-
+	var gridSize = 16;
+	var useRandom = false;
 
 	var formGrid = function(){
 		$container.html('')
@@ -13,13 +13,16 @@ $(function(){
 			}
 		}
 
-		$('.cell').css({"width": "calc(960px/"+gridSize+")",
-						"height": "calc(960px/"+gridSize+")"
+		$('.cell').css({"width": "calc(680px/"+gridSize+")",
+						"height": "calc(680px/"+gridSize+")"
 		})
 
 		$('.cell').on('mouseenter',function(){
-			var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-	   		$(this).css({"background-color": randomColor})
+			var color = "#222"
+			if(useRandom){
+			color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+		}
+	   		$(this).css({"background-color": color})
    		 });
 	}
 
@@ -27,12 +30,17 @@ $(function(){
 
     
     $('.grid-new').on('click', function(){
-    	gridSize = parseInt(prompt("Enter grid size"));
+    	gridSize = parseInt(prompt("Enter your new grid size"));
     	formGrid();
     })
 
      $('.grid-clear').on('click', function(){
     	formGrid();
+    })
+
+     $('.grid-random').on('click', function(){
+    	useRandom = !useRandom;
+    	$(this).toggleClass('active');
     })
 
 

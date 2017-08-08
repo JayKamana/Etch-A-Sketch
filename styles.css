@@ -1,8 +1,13 @@
+body {
+	background: #a9bbe2;
+}
+
 .container {
 	text-align: center;
-	width: 960px;
+	width: 680px;
 	margin: 0 auto 200px auto;
-	border: 2px solid #333;
+	border: 5px solid #333;
+	background: #ddd;
 }
 
 .cell {
@@ -38,4 +43,13 @@ h1 {
 
 .grid-btn:hover {
 	cursor: pointer;
+	background: #cbcbcb;
+}
+
+.active {
+	background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet); 
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet); 
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet); 
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet); 
 }
